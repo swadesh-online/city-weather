@@ -1,0 +1,6 @@
+package com.mindfire.cityservice.model;
+
+@Document("cities")
+public class City {
+
+}

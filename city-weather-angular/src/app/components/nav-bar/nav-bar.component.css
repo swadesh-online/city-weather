@@ -1,0 +1,31 @@
+
+/* nav-bar styling */
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0px;
+    overflow: hidden;
+    background-color: lightgray;
+  }
+  
+  li {
+    float: left;
+  }
+  
+  li a {
+    display: block;
+    color: rgb(255, 255, 255);
+    font-size:20px;
+    text-align: center;
+    padding: 10px 20px;
+    text-decoration: none;
+  }
+
+  .active-link{
+  background-color: rgb(87, 170, 243);
+  color: white;
+  }
+  
+  li a:hover {
+    background-color: rgb(170, 168, 166);
+  }

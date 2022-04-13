@@ -1,0 +1,10 @@
+<!-- Input field to provide city name to be added.  -->
+<div mat-dialog-content>
+    <input type="input" class ="form-control" placeholder="Please Enter the City Name" matInput [(ngModel)]="data.cityName">
+</div>
+
+<!-- Action Buttons for submission and cancellation. -->
+<div mat-dialog-actions>
+  <button mat-button class="btn btn-warning" (click)="onNoClick()">Cancel</button>
+  <button mat-button class="btn btn-success"  [mat-dialog-close]="data.cityName" cdkFocusInitial>Submit</button>
+</div>

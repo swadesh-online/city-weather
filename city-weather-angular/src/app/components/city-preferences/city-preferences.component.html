@@ -1,0 +1,45 @@
+
+<!-- Page Loader , when the content is not loaded -->
+<div *ngIf="!pageLoaded">
+
+  <div class="loader">Loading..</div>
+
+</div>
+
+
+<!-- On Page Load -->
+<div class="row" *ngIf="pageLoaded">
+
+  <div class="column"  *ngFor="let report of weatherReports">
+
+    <div class="card">
+  <!-- Iterating weatherReports for creation of multiple cards -->
+     
+  
+  <!-- info button -->
+  <button class="info" type="button" (click)="openDetailedHomePage(report.id)">&#9432;</button>
+  
+  <!-- delete button -->
+  <button class="delete" type="button" (click)="deleteCity(report.id)">🗑</button>
+        
+  <!-- city name -->
+  <div class="h3">{{report.city}}</div>
+      
+  <!-- localtime of city -->
+  <div class = "h8" *ngIf="report.localTime != undefined">{{report.localTime.split(" ")[1]}}</div>
+       
+  <!-- Weather condition of city -->
+  <div class="h4">{{report.condition}}</div>
+        
+  <!-- Icon for the Weather Condition -->
+  <img src="{{report.imageUrl}}" class="image" width="70px">
+        
+  <!-- Max Temperature and Min Temperature -->
+  <p>Day {{report.maxTemperature}}&#176; &#8593; . Night {{report.minTemperature}}&#176; &#8595; </p>
+      </div>
+    </div>
+    
+    <!-- Add-City button widget -->
+    <app-add-city-widget></app-add-city-widget>
+</div>
+

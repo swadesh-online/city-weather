@@ -1,0 +1,61 @@
+package com.mindfire.cityservice.dto;
+
+public class CityWeatherReport {
+	private String city;
+	private String condition;
+	private String maxTemperature;
+	private String minTemperature;
+	private String imageUrl;
+
+	public CityWeatherReport(String city, String condition, double maxTemperature, double minTemperature, String imageUrl) {
+		
+		super();
+		this.city = city;
+		this.condition = condition;
+		this.maxTemperature = Double.toString(maxTemperature);
+		this.minTemperature = Double.toString(minTemperature);
+		this.imageUrl = imageUrl;
+	}
+
+	public String getCity() {
+		return city;
+	}
+
+	public void setCity(String city) {
+		this.city = city;
+	}
+
+	public String getCondition() {
+		return condition;
+	}
+
+	public void setCondition(String condition) {
+		this.condition = condition;
+	}
+
+	public String getMaxTemperature() {
+		return maxTemperature;
+	}
+
+	public void setMaxTemperature(String maxTemperature) {
+		this.maxTemperature = maxTemperature;
+	}
+
+	public String getMinTemperature() {
+		return minTemperature;
+	}
+
+	public void setMinTemperature(String minTemperature) {
+		this.minTemperature = minTemperature;
+	}
+
+	public String getImageUrl() {
+		return imageUrl;
+	}
+
+	public void setImageUrl(String imageUrl) {
+		this.imageUrl = imageUrl;
+	}
+	
+	
+}

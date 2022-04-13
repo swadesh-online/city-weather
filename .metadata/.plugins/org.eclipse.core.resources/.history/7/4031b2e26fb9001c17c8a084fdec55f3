@@ -1,0 +1,13 @@
+package com.mindfire.cityservice.dto;
+
+import java.util.List;
+import lombok.Data;
+@Data
+public class RootCityData {
+	 private boolean error;
+
+	    private String msg;
+
+	    private List<Data> data;
+
+}

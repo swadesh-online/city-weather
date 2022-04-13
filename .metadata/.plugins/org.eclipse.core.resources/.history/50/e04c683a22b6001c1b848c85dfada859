@@ -1,0 +1,13 @@
+eureka:
+  client:
+    service-url:
+      default-zone: http://localhost:8761/eureka
+spring:
+  data:
+    mongodb:
+      database: local
+      uri: mongodb://localhost:27017/local
+  application:
+    name: city-api
+server:
+  port: '8082'

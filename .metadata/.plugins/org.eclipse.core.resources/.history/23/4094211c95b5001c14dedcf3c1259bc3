@@ -1,0 +1,49 @@
+package com.mindfire.cityservice.dto;
+
+public class CityWeatherReport {
+	private String city;
+	private String condition;
+	private String max_temperature;
+	private String min_temperature;
+	
+	public CityWeatherReport(String city, String condition, int max_temperature, int humidity) {
+		super();
+		this.city = city;
+		this.condition = condition;
+		this.max_temperature = Integer.toString(max_temperature);
+		this.humidity = Integer.toString(humidity);
+	}
+
+	public String getCity() {
+		return city;
+	}
+
+	public void setCity(String city) {
+		this.city = city;
+	}
+
+	public String getcondition() {
+		return condition;
+	}
+
+	public void setcondition(String condition) {
+		this.condition = condition;
+	}
+
+	public String getmax_temperature() {
+		return max_temperature;
+	}
+
+	public void setmax_temperature(String max_temperature) {
+		this.max_temperature = max_temperature;
+	}
+
+	public String getHumidity() {
+		return humidity;
+	}
+
+	public void setHumidity(String humidity) {
+		this.humidity = humidity;
+	}
+	
+}

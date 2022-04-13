@@ -1,0 +1,162 @@
+<!-- Container to fill the whole page -->
+<div class="container">
+   
+    <!-- Row 1 -->
+    <div class ="row">
+     
+     <!-- R1 C1 : contains the city details : Name, Condition, High-Low Temp  -->
+        <div class = "col city-details">
+        <!-- City Name -->
+        <div class="h1">
+        {{cityWeatherDetails?.location?.name}}
+        </div>
+        <!-- City Condition -->
+        <div class="h3">
+            {{cityWeatherDetails?.current?.condition?.text}}
+            <img class="main-icon" src="{{cityWeatherDetails?.current?.condition?.icon}}"/>
+        </div>
+        <!-- High and Low Temp today in C -->
+        <div class="h5" style="margin-left: 10px;">
+            H : {{cityWeatherDetails?.forecast?.forecastday[0]?.day?.maxtempC}}&deg; 
+             L : {{cityWeatherDetails?.forecast?.forecastday[0]?.day?.mintempC}}&deg;
+        </div>
+
+        
+        </div>
+
+        <!-- R1 C2 : contains the location details : Local Time, Region, Country..  -->
+        <div class = "col">
+            <div class="location-detail"> Local Time : 
+                {{cityWeatherDetails?.location?.localtime.split(" ")[1]}}
+            </div>
+            <div class="location-detail"> Region : 
+              {{cityWeatherDetails?.location?.region}}   </div>
+            <div class="location-detail">   Country : 
+                {{cityWeatherDetails?.location?.country}}
+            </div>
+            <div class="location-detail">  Latitude : 
+                {{cityWeatherDetails?.location?.lat}}
+            </div>
+            <div class="location-detail">  Longitude : 
+                {{cityWeatherDetails?.location?.lon}}
+            </div>
+            
+        </div>
+
+        <!-- R1 C3 :  contains larger size current Temperature and Feels Like Temp.-->
+     <div class = "col">
+         <div class="current-temp">
+            {{cityWeatherDetails?.current?.tempC}}&deg;
+         </div>
+         <div class="feels-like">
+            Feels like {{cityWeatherDetails?.current?.feelslikeC}}&deg;
+         </div>
+     </div>
+    </div>
+   
+    <!-- Line separating Row 1 and Row 2 -->
+    <div class="line"></div>
+   
+    <!-- Row 2 -->
+    <div class ="row">
+       
+        <!-- R2 C1 : Contains next 5 Hours Weather Update  -->
+        <div class = "col">
+        <div class="h3">
+            Today
+        </div>    
+        <div class="row row-custom" *ngFor="let hour of next5HoursUpdate">
+        <div class="col-sm-auto">
+            {{hour?.time.split(" ")[1]}}
+        </div>
+        <div class="col-sm-auto">
+           {{hour?.tempC}}&deg;         
+        </div>
+        <div class="col-sm-auto">
+           <img class="details-icon" src={{hour?.condition?.icon}}/>
+        </div>
+        </div>
+        
+        </div>
+        
+        <!-- R2 C2 : Contains Forecast Data of the city  -->
+        <div class = "col">
+            <div class="h3">
+                Forecast
+            </div>    
+            <div class="row row-custom" *ngFor="let day of forecastData">
+            <div class="col-sm-auto">
+                {{day.date.split('-')[2]}}/{{day.date.split('-')[1]}}
+            </div>
+            <div class="col-sm-auto">
+                {{day?.day?.maxtempC}}&deg; <div class="minTemp"> {{day?.day?.mintempC}}&deg;  </div>      
+            </div>
+            <div class="col-sm-auto">
+               <img class="details-icon" src={{day?.day?.condition?.icon}}/>
+            </div>
+            </div>
+            
+        </div>
+
+        <!-- R2 C3 : Contains details : Sunrise, Humidity, Chance of Rain..  -->
+        <div class = "col">
+
+            <div class="current-detail"> Sunrise : 
+              {{cityWeatherDetails?.forecast?.forecastday[0]?.astro?.sunrise}}   </div>
+            <div class="current-detail">   Sunset : 
+                {{cityWeatherDetails?.forecast?.forecastday[0]?.astro?.sunset}}
+            </div>
+            <div class="current-detail">  Chance of Rain : 
+                {{cityWeatherDetails?.forecast?.forecastday[0]?.day?.dailyChanceOfRain}}%
+            </div>
+            <div class="current-detail">  Humidity : 
+                {{cityWeatherDetails?.current?.humidity}}%
+            </div>
+            <div class="current-detail"> Wind : 
+                {{cityWeatherDetails?.current?.windKph}} Kph 
+            </div>
+        </div>
+    </div>
+
+     <!-- Line separating Row 2 and Row 3 -->
+    <div class="line"></div>
+   
+    <!-- Row 3 -->
+    <div class = "row">
+       
+        <!-- R3 C1 : Contains UV-Index -->
+        <div class = "col">
+            <div class="h3">
+                UV Index
+            </div> 
+            <div class="uv-index" [ngClass]="{'uv-low': cityWeatherDetails?.current?.uv <= 2  ,
+                                            'uv-mid': cityWeatherDetails?.current?.uv >= 3 && cityWeatherDetails?.current?.uv <= 5,
+                                            'uv-high': cityWeatherDetails?.current?.uv >= 6 && cityWeatherDetails?.current?.uv <= 10,
+                                            'uv-extreme' : cityWeatherDetails?.current?.uv >= 11  } ">
+                {{cityWeatherDetails?.current?.uv}} 
+                
+                <div class="h4" style="padding-top: 20px;">{{uvStatus}} </div>
+            </div>
+        </div>
+
+        <!-- R3 C2 : Contains Visibility in Kms -->
+        <div class = "col">
+            <div class="h3">
+                Visibility (in km)
+            </div> 
+           <div class="uv-index">
+               {{cityWeatherDetails?.current?.visKm}} 
+           </div>
+        </div>
+
+          <!-- R3 C3 : Contains Precipitation in mm -->
+        <div class = "col">
+            <div class="h3">
+                Precipitation (in mm)
+            </div> 
+           <div class="uv-index">
+               {{cityWeatherDetails?.current?.precipMm}} 
+           </div>
+        </div>
+    </div>
+</div>

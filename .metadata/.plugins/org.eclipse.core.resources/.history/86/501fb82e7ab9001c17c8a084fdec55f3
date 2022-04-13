@@ -1,0 +1,40 @@
+package com.mindfire.weatherservice.service;
+
+import org.slf4j.Logger;
+import org.springframework.context.annotation.Bean;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestTemplate;
+import org.springframework.web.server.ResponseStatusException;
+
+import com.mindfire.weatherservice.dto.Weather;
+
+@Service
+public class WeatherService {
+	
+	@Bean
+	RestTemplate restTemplate() {
+		
+		return new RestTemplate();
+	};
+	
+	
+	/**
+	 *  This method is used to get Weather Details of any city
+	 * @param city
+	 * @return
+	 */
+	public Weather getWeatherReport(String city)  {
+		try {	
+			String cityNameFormatted= city.trim().replaceAll(" ", "");
+			String url="http://api.weatherapi.com/v1/forecast.json?key=483a04daff914ce58f991903220803&q={city}&days={days}";
+		ResponseEntity<Weather> response = this.restTemplate().getForEntity(url, Weather.class,city,"1");
+		return response.getBody();
+		}
+		catch(Exception e) {
+			e.printStackTrace();
+			return null;
+		}
+		}
+}

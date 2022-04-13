@@ -1,0 +1,5 @@
+package com.mindfire.gatewayservice.configuration;
+
+public class CustomConfig {
+
+}

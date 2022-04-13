@@ -1,0 +1,118 @@
+
+/* setting the container to fill the whole component and also providing background color */
+html, body {
+    height: 100%;
+    margin: 0;
+}
+.container{
+    min-height: 100%;
+    min-width : 100%;
+    color: aliceblue;
+    background-color: #000000;
+    background-image: linear-gradient(147deg, #000000 0%, #04619f 74%);
+}
+
+/* Setting the row and col to create grids of 3*3 */
+.row{
+    height: 33%;
+    padding:15px 30px 15px 10px;
+}
+.col{
+    width : 33%;
+    padding:15px 30px 15px 10px;
+}
+
+/* for the headers {font-size and margin} */
+.h1{
+    font-size: xxx-large;
+    margin-left: 10px;
+}
+.h3{
+    margin-left: 10px;
+}   
+.h3 .h5{
+    margin-left: 10px;
+}
+
+
+/* making font bigger for the small details */
+.col-sm-auto {
+    font-size: large;
+}
+
+/* setting height to the forecast and today's data */
+.row-custom{
+    height: 15%;
+}
+
+/* for the right-top Current Temperature */
+.current-temp {
+    font-size: 7em;
+    margin-left: 30%;
+    margin-top: 50px;
+}
+
+/* for the right-top feels like */
+.feels-like{
+    margin-left: 30%;
+    margin-top: 4em;
+    opacity: 0.7;
+    font-size: large;
+}
+
+/* for the current-details row:2 col:2 */
+.current-detail {
+   font-size: large;
+   margin-top : 20px;
+   margin-left : 30%;
+}
+
+/* for the location-details row:1 col:2 */
+.location-detail {
+    font-size: large;
+     margin-top : 20px;
+ }
+
+/* for the details-icon for condition in Today and Forecast columns. */
+.details-icon{
+    width : 40%;
+    right: 50%;
+}
+
+/* for the main icon in left-top displaying the condition */
+.main-icon{
+    width: 70px;
+}
+
+/* for the minimum-temperature in Forecast column. */
+.minTemp {
+    opacity: 0.7;
+}
+
+/* for the UV-Index */
+.uv-index{
+    font-size: 3em;
+    padding: 20px;
+
+}
+
+.uv-low{
+color: green;
+}
+
+.uv-mid{
+color: yellow;
+}
+.uv-high{
+color: orange;
+}
+.uv-extreme{
+color: red;
+}
+
+
+/* for the white line, separation of rows */
+.line {
+    height: 1px;
+    background: rgb(255, 255, 255);
+  }

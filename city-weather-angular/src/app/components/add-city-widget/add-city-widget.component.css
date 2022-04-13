@@ -1,0 +1,27 @@
+/* converting the button to circular and addition of box shadow */
+.add-btn {
+    left: 90%;
+    position: fixed;
+    bottom: 10%;
+    color : white;
+    display:block;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    border: 1px solid rgb(81, 73, 148);
+    background: rgb(103, 104, 193);
+    -webkit-box-shadow: 3px 11px 127px 26px rgba(0,0,0,0.57);
+    -moz-box-shadow: 3px 11px 127px 26px rgba(0,0,0,0.57);
+    box-shadow: 3px 11px 127px 26px rgba(0,0,0,0.57);
+  }
+
+/* On Hovering on the button, change of color.  */
+  .add-btn:hover {
+      background-color: rgb(38, 47, 224);
+  }
+
+/* for the plus symbol */
+  button h1{
+      margin-top: 8px;
+      font-size: xx-large;
+  }

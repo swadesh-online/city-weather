@@ -1,0 +1,16 @@
+package com.mindfire.cityservice.dto;
+
+public class CityWeatherReport {
+	private String city;
+	private String country;
+	private String temperature;
+	private String humidity;
+	
+	public CityWeatherReport(String city, String country, int temperature, int humidity) {
+		super();
+		this.city = city;
+		this.country = country;
+		this.temperature = Integer.toString(temperature);
+		this.humidity = Integer.toString(humidity);
+	}	
+}

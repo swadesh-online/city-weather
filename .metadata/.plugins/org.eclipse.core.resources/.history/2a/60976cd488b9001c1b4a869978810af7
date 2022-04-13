@@ -1,0 +1,18 @@
+package com.mindfire.weatherservice.exception;
+
+import java.util.Date;
+
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+
+public class ResourceNotFoundException {
+
+	
+	protected ResponseEntity<Object> handleError(
+			   ResourceNotFoundException ex) {
+		   
+		   Date date = new Date();
+		   ErrorDetails errorDetails= new ErrorDetails(date.toString(),"Desired city is missing in the API.", "NOT_FOUND", "404" );
+	       return new ResponseEntity<>(errorDetails, HttpStatus.NOT_FOUND);
+	   }
+}

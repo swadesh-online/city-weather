@@ -1,0 +1,134 @@
+package com.mindfire.weatherservice.dto;
+
+import com.fasterxml.jackson.annotation.JsonAlias;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+import lombok.Data;
+
+@Data
+public class Hour
+{	
+	@JsonProperty("timeEpoch")
+   	@JsonAlias("time_epoch")
+    private int timeEpoch;
+
+    private String time;
+    
+    @JsonProperty("tempC")
+   	@JsonAlias("temp_c")
+    private double tempC;
+    
+    @JsonProperty("dateEpoch")
+   	@JsonAlias("date_epoch")
+    private double temp_f;
+    
+    @JsonProperty("dateEpoch")
+   	@JsonAlias("date_epoch")
+    private int is_day;
+
+    private Condition condition;
+    
+    @JsonProperty("dateEpoch")
+   	@JsonAlias("date_epoch")
+    private double wind_mph;
+    
+    @JsonProperty("dateEpoch")
+   	@JsonAlias("date_epoch")
+    private double wind_kph;
+    
+    @JsonProperty("dateEpoch")
+   	@JsonAlias("date_epoch")
+    private int wind_degree;
+    
+    @JsonProperty("dateEpoch")
+   	@JsonAlias("date_epoch")
+    private String wind_dir;
+    
+    @JsonProperty("dateEpoch")
+   	@JsonAlias("date_epoch")
+    private int pressure_mb;
+    
+    @JsonProperty("dateEpoch")
+   	@JsonAlias("date_epoch")
+    private double pressure_in;
+    
+    @JsonProperty("dateEpoch")
+   	@JsonAlias("date_epoch")
+    private int precip_mm;
+    
+    @JsonProperty("dateEpoch")
+   	@JsonAlias("date_epoch")
+    private int precip_in;
+
+    private int humidity;
+
+    private int cloud;
+    
+    @JsonProperty("dateEpoch")
+   	@JsonAlias("date_epoch")
+    private double feelslike_c;
+    
+    @JsonProperty("dateEpoch")
+   	@JsonAlias("date_epoch")
+    private double feelslike_f;
+    
+    @JsonProperty("dateEpoch")
+   	@JsonAlias("date_epoch")
+    private double windchill_c;
+    
+    @JsonProperty("dateEpoch")
+   	@JsonAlias("date_epoch")
+    private double windchill_f;
+    
+    @JsonProperty("dateEpoch")
+   	@JsonAlias("date_epoch")
+    private double heatindex_c;
+    
+    @JsonProperty("dateEpoch")
+   	@JsonAlias("date_epoch")
+    private double heatindex_f;
+    
+    @JsonProperty("dateEpoch")
+   	@JsonAlias("date_epoch")
+    private double dewpoint_c;
+    
+    @JsonProperty("dateEpoch")
+   	@JsonAlias("date_epoch")
+    private double dewpoint_f;
+    
+    @JsonProperty("dateEpoch")
+   	@JsonAlias("date_epoch")
+    private int will_it_rain;
+    
+    @JsonProperty("dateEpoch")
+   	@JsonAlias("date_epoch")
+    private int chance_of_rain;
+
+    @JsonProperty("dateEpoch")
+   	@JsonAlias("date_epoch")
+    private int will_it_snow;
+    
+    @JsonProperty("dateEpoch")
+   	@JsonAlias("date_epoch")
+    private int chance_of_snow;
+    
+    @JsonProperty("dateEpoch")
+   	@JsonAlias("date_epoch")
+    private int vis_km;
+    
+    @JsonProperty("dateEpoch")
+   	@JsonAlias("date_epoch")
+    private int vis_miles;
+    
+    @JsonProperty("dateEpoch")
+   	@JsonAlias("date_epoch")
+    private double gust_mph;
+
+    @JsonProperty("dateEpoch")
+   	@JsonAlias("date_epoch") 
+    private double gust_kph;
+
+    private int uv;
+
+    
+}

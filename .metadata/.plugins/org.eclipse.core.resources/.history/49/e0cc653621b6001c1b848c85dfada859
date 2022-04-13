@@ -1,0 +1,5 @@
+package com.mindfire.cityservice.model;
+
+public class City {
+
+}

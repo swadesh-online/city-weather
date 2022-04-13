@@ -1,0 +1,5 @@
+package com.mindfire.cityservice.dto;
+
+public class CityWeatherReport {
+
+}

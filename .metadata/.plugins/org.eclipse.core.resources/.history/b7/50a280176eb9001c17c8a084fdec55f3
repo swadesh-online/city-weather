@@ -1,0 +1,27 @@
+package com.mindfire.weatherservice.dto;
+
+import com.fasterxml.jackson.annotation.JsonAlias;
+
+import lombok.Data;
+
+@Data
+public class Location
+{
+    private String name;
+
+    private String region;
+
+    private String country;
+
+    private double lat;
+
+    private double lon;
+    
+    @JsonAlias("tz_id")
+    private String tzId;
+
+    private int localtime_epoch;
+
+    private String localtime;
+
+}

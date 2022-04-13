@@ -1,0 +1,11 @@
+@import "~bootstrap/dist/css/bootstrap.css";
+@import '~ngx-toastr/toastr';
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+
+/* Wild card entry to apply the font to the whole project  */
+*{
+  font-family: 'Quicksand', sans-serif;
+}
+
+html, body { height: 100%; }
+body { margin: 0; }

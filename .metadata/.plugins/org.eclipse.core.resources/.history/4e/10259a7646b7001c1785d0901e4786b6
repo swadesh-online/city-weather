@@ -1,0 +1,66 @@
+package com.mindfire.weatherservice.dto;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+@JsonIgnoreProperties(ignoreUnknown = true)
+public class Air_quality {
+	private int co;
+
+	private double no2;
+
+	private double o3;
+
+	private double so2;
+
+	private double pm2_5;
+
+	private double pm10;
+
+	public void setCo(int co) {
+		this.co = co;
+	}
+
+	public int getCo() {
+		return this.co;
+	}
+
+	public void setNo2(double no2) {
+		this.no2 = no2;
+	}
+
+	public double getNo2() {
+		return this.no2;
+	}
+
+	public void setO3(double o3) {
+		this.o3 = o3;
+	}
+
+	public double getO3() {
+		return this.o3;
+	}
+
+	public void setSo2(double so2) {
+		this.so2 = so2;
+	}
+
+	public double getSo2() {
+		return this.so2;
+	}
+
+	public void setPm2_5(double pm2_5) {
+		this.pm2_5 = pm2_5;
+	}
+
+	public double getPm2_5() {
+		return this.pm2_5;
+	}
+
+	public void setPm10(double pm10) {
+		this.pm10 = pm10;
+	}
+
+	public double getPm10() {
+		return this.pm10;
+	}
+}

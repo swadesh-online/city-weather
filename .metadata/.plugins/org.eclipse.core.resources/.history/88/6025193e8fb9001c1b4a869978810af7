@@ -1,0 +1,5 @@
+package com.mindfire.cityservice.exception;
+
+public class GenericException extends RuntimeException{
+
+}

@@ -1,0 +1,15 @@
+package com.mindfire.cityservice.dto;
+
+import lombok.Data;
+
+@Data
+public class CityWeatherReport {
+	private String id;
+	private String city;
+	private String localTime;
+	private String condition;
+	private String maxTemperature;
+	private String minTemperature;
+	private String imageUrl;	
+	
+}
