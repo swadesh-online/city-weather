@@ -1,3 +1,0 @@
-server.port=9003
-spring.application.name=weather-service
-eureka.client.service-url.default-zone=http://localhost:8761/eureka

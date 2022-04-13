@@ -1,0 +1,29 @@
+server:
+  port: 8080
+  application:
+    name: gateway-api
+  cloud:
+    gateway:
+      default-filters:
+        - DedupeResponseHeader=Access-Control-Allow-Credentials Access-Control-Allow-Origin
+      globalcors:
+        corsConfigurations:
+          '[/**]':
+              allowedOrigins: "http://localhost:4200"
+              allowedMethods: "*"
+              allowedHeaders: "*"
+      routes:
+      - id: city-api
+        uri: lb://CITY-API
+        predicates:
+        - Path=/city/**
+      - id: weather-api
+        uri: lb://WEATHER-API
+        predicates:
+        - Path=/weather/**
+eureka:
+  client:
+    service-url:
+      default-zone: http://localhost:8761/eureka
+
+ 

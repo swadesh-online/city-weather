@@ -1,2 +1,0 @@
-server.port=8080
-spring.cloud.gateway.routes={id=weatherApi, uri=http://localhost:9001/, predicates=[Path=/weather-api/**]}, {id=cityApi, uri=http://localhost:8082/, predicates=[Path=/consumer/**]}

@@ -6,11 +6,14 @@ import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.data.mongodb.repository.config.EnableMongoRepositories;
 
+import io.swagger.v3.oas.annotations.OpenAPIDefinition;
+
 
 @SpringBootApplication
 @EnableFeignClients
 @EnableEurekaClient
 @EnableMongoRepositories
+@OpenAPIDefinition
 public class CityServiceApplication {
 
 	public static void main(String[] args) {

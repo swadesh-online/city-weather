@@ -27,6 +27,9 @@ dependencies {
 	
 	//Lombok 
 	implementation 'org.projectlombok:lombok:1.18.20'
+	
+	//open-api (swagger-ui) 
+	implementation "org.springdoc:springdoc-openapi-ui:1.6.4"
 }
 
 
