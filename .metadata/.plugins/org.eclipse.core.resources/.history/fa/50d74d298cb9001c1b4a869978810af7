@@ -1,5 +1,0 @@
-package com.mindfire.cityservice.handler;
-
-public class RestExceptionHandler {
-
-}

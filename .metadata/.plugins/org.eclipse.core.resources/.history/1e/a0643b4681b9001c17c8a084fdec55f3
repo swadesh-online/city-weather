@@ -1,5 +1,0 @@
-package com.mindfire.weatherservice.handler;
-
-public class RestTemplateResponseErrorHandler {
-
-}

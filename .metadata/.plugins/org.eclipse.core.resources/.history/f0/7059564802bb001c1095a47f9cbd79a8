@@ -1,8 +1,0 @@
-package com.mindfire.cityservice.exception;
-
-@Data
-public class ErrorDetails {
-
-	private String timestamp;
-	
-}
