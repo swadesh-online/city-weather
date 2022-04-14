@@ -38,7 +38,7 @@
     text-align: center;
     background-color: #000000;
     background-image: linear-gradient(147deg, #000000 0%, #04619f 74%);
-    border-radius: 2em;
+    border-radius: 0.7em;
 
     -webkit-box-shadow: 6px 9px 23px -8px rgba(0,0,0,0.57);
     -moz-box-shadow: 6px 9px 23px -8px rgba(0,0,0,0.57);
@@ -48,7 +48,8 @@
 
 /* On Card hover, decrease the opacity */
 .card:hover{
-    opacity:0.9;
+    opacity:0.8;
+    transform: scale3d(1.05,1.05,1.05);
 }
 
 /* without hover, the buttons are hidden  */
