@@ -14,14 +14,8 @@ import com.mindfire.cityservice.repository.CityRepository;
 
 import feign.FeignException.FeignClientException;
 
-@Service
-public class CityService {
 
-	@Autowired
-	WeatherConsumerService weatherConsumer;
-
-	@Autowired
-	CityRepository cityRepository;
+public interface CityService {
 
 	/**
 	 * This method adds city to the cityList
@@ -30,30 +24,7 @@ public class CityService {
 	 * @return {@link ResponseEntity} : returns Success message on successful addition 
 	 * 
 	 */
-	public ResponseEntity<?> add(String cityName) {
-
-		// Checks if city is present in Api
-		if (IsValidatedInApi(cityName)) {
-
-			List<City> existingCities = cityRepository.findAll();
-			boolean cityFound = false;
-			for (City city : existingCities) {
-
-				// Checks if city is already present in list, else save.
-				if (city.getName().equalsIgnoreCase(cityName)) {
-
-					cityFound = true;
-					throw new GenericException("The city is already present.");
-				}
-			}
-			if (!cityFound) {
-
-				cityRepository.save(new City(cityName.toLowerCase()));
-			}
-			
-		}
-		return new ResponseEntity<Object>("SUCCESS",HttpStatus.OK);
-	}
+	public ResponseEntity<?> add(String cityName);
 	
 	
 	/**
@@ -61,29 +32,19 @@ public class CityService {
 	 * @param cityName
 	 * @return boolean : isValid 
 	 */
-	private boolean IsValidatedInApi(String cityName) {
-		try {
-			
-			weatherConsumer.getWeather(cityName);
-			
-			return true;
-		} catch (FeignClientException fce) {
-			
-			throw new ResourceNotFoundException();
-		}
-	}
+	public boolean IsValidatedInApi(String cityName);
 
+	
 	/**
 	 * This method is used to fetch all cities from the cityList
 	 * 
 	 * @return List<City> - updated cityList
 	 * 
 	 */
-	public List<City> fetchAll() {
+	public List<City> fetchAll(); 
 
-		return cityRepository.findAll();
-	}
-
+	
+	
 	/**
 	 * This method is used to remove city from the cityList
 	 * 
@@ -91,19 +52,6 @@ public class CityService {
 	 * @return {@link ResponseEntity} : returns Success message on successful deletion. 
 	 * 
 	 */
-	public ResponseEntity<?> delete(String cityId) {
-
-		// Checks if the cityName is present in the list, if found removes it.
-		List<City> existingCities = cityRepository.findAll();
-		for (City city : existingCities) {
-
-			if (city.getCityId().equals(cityId)) {
-
-				cityRepository.delete(city);
-
-			}
-		}
-
-		return new ResponseEntity<Object>("SUCCESS",HttpStatus.OK);
-	}
+	public ResponseEntity<?> delete(String cityId);
+	
 }
